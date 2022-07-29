@@ -8,15 +8,15 @@ export default function ProductsPage() {
     function handleSearch(e) {
         if(e.target.value === "") {
             setProducts(jsonData);
-        } else { 
-            const filtered = products.map(product => product.name.toLowerCase().includes(e.target.value.toLowerCase()));
+        } else {
+            const filtered = products.filter(product => product.name.toLowerCase().includes(e.target.value.toLowerCase()));
             setProducts(filtered);
         }
     };
     return (
         <div>
             <h1>IronStore</h1>
-            <SearchBar onChange={(e) => handleSearch}/>
+            <SearchBar onChange={handleSearch}/>
             <ProductTable products={products}/>
         </div>
     )

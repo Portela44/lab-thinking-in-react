@@ -13,7 +13,7 @@ export default function ProductTable(props) {
                         <th>Price</th>
                     </tr>
                     {products.map(product => {
-                        return <ProductRow product={product} key={product.id}/>
+                    return <ProductRow product={product} key={product.id}/>
                     })}
                 </tbody>
             </table>
