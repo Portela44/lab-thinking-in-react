@@ -5,11 +5,19 @@ import ProductTable from './ProductTable'
 
 export default function ProductsPage() {
     const [products, setProducts] = useState(jsonData);
+    function handleSearch(e) {
+        if(e.target.value === "") {
+            setProducts(jsonData);
+        } else { 
+            const filtered = products.map(product => product.name.toLowerCase().includes(e.target.value.toLowerCase()));
+            setProducts(filtered);
+        }
+    };
     return (
         <div>
             <h1>IronStore</h1>
-            <SearchBar/>
-            <ProductTable/>
+            <SearchBar onChange={(e) => handleSearch}/>
+            <ProductTable products={products}/>
         </div>
     )
 }

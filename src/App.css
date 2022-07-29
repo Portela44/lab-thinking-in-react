@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+/* PRODUCT TABLE */
+
+.productTable {
+  margin: 0 auto;
+}
+
+.red {
+  color:red;
+}
